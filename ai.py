@@ -4,7 +4,7 @@ import os
 
 # Initialize OpenAI client
 client = OpenAI(
-    api_key="YOUR-OPENAI-API-KEY"
+    api_key="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"
 )
 
 def generate_linkedin_posts(topic, feedback_history=None):
