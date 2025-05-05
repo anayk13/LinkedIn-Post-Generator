@@ -5,9 +5,24 @@ from openai import OpenAI
 
 # Initialize OpenAI client
 client = OpenAI(
-    api_key="YOUR-API-KEY"
+    api_key="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"
 )
+def login():
+    st.title("Login")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    if st.button("Login"):
+        if username == "anay" and password == "mypassword123":  # replace with your real values
+            st.session_state.logged_in = True
+        else:
+            st.error("Invalid credentials")
 
+if 'logged_in' not in st.session_state:
+    st.session_state.logged_in = False
+
+if not st.session_state.logged_in:
+    login()
+    st.stop()
 def generate_linkedin_posts(topic, feedback_history=None):
     prompt = f"Generate 3 different LinkedIn posts about {topic}. Each post should be engaging, professional, and include relevant hashtags. Number each post clearly as 'Post 1:', 'Post 2:', and 'Post 3:'. Make each post unique in style and content."
     
