@@ -2,6 +2,7 @@ import streamlit as st
 import json
 import os
 from openai import OpenAI
+Key = st.secrets["OPENAI_API_KEY"]
 
 # Initialize OpenAI client
 client = OpenAI(
