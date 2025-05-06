@@ -1,11 +1,13 @@
 from openai import OpenAI
 import json
 import os
+Key = st.secrets["OPENAI_API_KEY"]
 
 # Initialize OpenAI client
 client = OpenAI(
     api_key=Key
 )
+
 
 def generate_linkedin_posts(topic, feedback_history=None):
     prompt = f"Generate 3 different LinkedIn posts about {topic}. Each post should be engaging, professional, and include relevant hashtags. Number each post clearly as 'Post 1:', 'Post 2:', and 'Post 3:'. Make each post unique in style and content."
